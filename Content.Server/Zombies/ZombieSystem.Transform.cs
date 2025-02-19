@@ -199,6 +199,12 @@ public sealed partial class ZombieSystem
         _inventory.TryUnequip(target, "gloves", true, true);
         //Should prevent instances of zombies using comms for information they shouldnt be able to have.
         _inventory.TryUnequip(target, "ears", true, true);
+        //Needed to deprive a zombie of a jetpack.
+        _inventory.TryUnequip(target, "back", true, true);
+        //Also needed to deprive zombies of their jetpack.
+        _inventory.TryUnequip(target, "belt", true, true);
+        //And this is also needed to deprive the zombie of a jetpack.
+        _inventory.TryUnequip(target, "suitstorage", true, true);
 
         //popup
         _popup.PopupEntity(Loc.GetString("zombie-transform", ("target", target)), target, PopupType.LargeCaution);
